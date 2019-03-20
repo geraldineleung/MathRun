@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://collectibles/ghost.gd" type="Script" id=1]
+[ext_resource path="res://enemy/Death_000.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 11.0676, 10 )
+
+[node name="ghost" type="Area2D"]
+
+position = Vector2( 510.481, 202.9 )
+scale = Vector2( 0.6, 0.6 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( -117.833, 2.68196 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( -100.197, -19.2518 )
+scale = Vector2( 37.1008, 2.77493 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="area_entered" from="." to="." method="_on_gem_area_entered"]
+
+[connection signal="body_entered" from="." to="." method="_on_gem_body_entered"]
+
+
