@@ -41,6 +41,7 @@ func _process(delta):
 		print("paused")
 		show_question()
 
+
 func spawn_ghost(num):
 	for i in range(num):
 		var g = ghost.instance()

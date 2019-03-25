@@ -38,3 +38,5 @@ func anim_switch(animation):
 	var newanim = str(animation,"up")
 	if $anim.current_animation != newanim:
 		$anim.play(newanim)
+
+

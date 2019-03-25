@@ -1,8 +1,10 @@
 extends Area2D
 
-onready var display = preload("res://question_display/question_display.tscn")
+#onready var popup = preload("res://question_display/question_popup.tscn")
+var p
 
 func _ready():
+	p = get_tree().get_root().find_node("question_popup_container",true,false)
 	pass
 
 func _physics_process(delta):
@@ -11,10 +13,13 @@ func _physics_process(delta):
 func _on_gem_body_entered(body):
 	if body.get_name() == "player":
 		get_tree().paused = true
+		show_question()
 
 func move_gems():
 	translate(Vector2(0,4))
 
-func _on_gem_area_entered(area):
-	if area.get_name() == "tree" || area.get_name() == "coin":
-		print(area.get_name())
+func show_question():
+	print("paused")
+	print(p.get_name())
+	add_child(p)
+	p.pop_question()
