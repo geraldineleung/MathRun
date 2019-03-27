@@ -7,6 +7,8 @@ onready var ghost_container = get_node("gem_container")
 onready var coin_container = get_node("coin_container")
 onready var tree_container = get_node("tree_container")
 
+#to change main scene: project settings >> application
+
 var screensize
 var score = 0
 const GHOST_TIMER_MAX = 500
@@ -39,7 +41,7 @@ func _process(delta):
 		tree_spawn_timer = 0
 	if get_tree().paused == true:
 		print("paused")
-		show_question()
+		#show_question()
 
 
 func spawn_ghost(num):
