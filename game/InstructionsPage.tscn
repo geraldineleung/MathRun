@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://game/SettingsPage.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/MenuPageTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/instructions.png" type="Texture" id=2]
 
 [node name="InstructionsPage" index="0" instance=ExtResource( 1 )]
