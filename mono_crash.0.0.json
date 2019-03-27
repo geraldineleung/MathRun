@@ -1,0 +1,66 @@
+{
+  "protocol_version" : "0.0.2",
+  "configuration" : {
+    "version" : "5.18.0.240 (tarball)",
+    "tlc" : "normal",
+    "sigsgev" : "normal",
+    "notifications" : "kqueue",
+    "architecture" : "amd64",
+    "disabled_features" : "none",
+    "smallconfig" : "disabled",
+    "bigarrays" : "disabled",
+    "softdebug" : "enabled",
+    "interpreter" : "enabled",
+    "llvm_support" : "disabled",
+    "suspend" : "preemptive"
+  },
+  "memory" : {
+    "Resident Size" : "584777728",
+    "Virtual Size" : "5817892864",
+    "minor_gc_time" : "31183",
+    "major_gc_time" : "24059",
+    "minor_gc_count" : "4",
+    "major_gc_count" : "4",
+    "major_gc_time_concurrent" : "0"
+ },
+  "threads" : [
+ {
+    "is_managed" : false,
+    "crashed" : false,
+    "managed_thread_ptr" : "0x0",
+    "native_thread_id" : "0x70000639f000",
+    "thread_info_addr" : "0x0",
+    "thread_name" : "Finalizer",
+    "ctx" : {
+      "IP" : "0x7fff5ead81b6",
+      "SP" : "0x70000639ed68",
+      "BP" : "0x70000639ee20"
+  },
+    "unmanaged_frames" : [
+  {
+      "native_address" : "unregistered"
+   }
+
+  ]
+ },
+ {
+    "is_managed" : false,
+    "crashed" : true,
+    "managed_thread_ptr" : "0x0",
+    "native_thread_id" : "0x11e2205c0",
+    "thread_info_addr" : "0x0",
+    "thread_name" : "tid_307",
+    "ctx" : {
+      "IP" : "0x10e4d1967",
+      "SP" : "0x7ffee2e56dd0",
+      "BP" : "0x7ffee2e56e30"
+  },
+    "unmanaged_frames" : [
+  {
+      "native_address" : "unregistered"
+   }
+
+  ]
+ }
+ ]
+}
