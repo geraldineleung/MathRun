@@ -20,6 +20,4 @@ func move_gems():
 
 func show_question():
 	print("paused")
-	print(p.get_name())
-	add_child(p)
 	p.pop_question()

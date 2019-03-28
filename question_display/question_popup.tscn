@@ -4,7 +4,7 @@
 [ext_resource path="res://montserrat/Montserrat-Black.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://montserrat/Caveat-Regular.ttf" type="DynamicFontData" id=3]
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=1]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -43,10 +43,10 @@ _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 [sub_resource type="Theme" id=3]
 
 default_font = SubResource( 2 )
-PopupPanel/styles/panel = SubResource( 4 )
+PopupPanel/styles/panel = SubResource( 1 )
 _sections_unfolded = [ "PopupPanel", "PopupPanel/styles", "Resource" ]
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=4]
 
 size = 22
 use_mipmaps = false
@@ -62,13 +62,21 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=6]
 
 size = 36
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=7]
+
+size = 36
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=8]
 
@@ -78,21 +86,15 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=9]
+[node name="question_popup_container" type="Node2D" index="0"]
 
-size = 36
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 2 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[node name="question_popup_container" type="Node2D"]
-
+pause_mode = 2
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Pause", "Transform", "Z Index" ]
 
 [node name="question_popup" type="PopupDialog" parent="." index="0"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -114,7 +116,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="ghost_message" type="Label" parent="question_popup" index="2"]
+[node name="ghost_message" type="Label" parent="question_popup" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -130,7 +132,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "To continue on your journey, answer my question!"
 align = 1
@@ -141,7 +143,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Margin", "custom_colors", "custom_constants", "custom_fonts" ]
 
-[node name="question_label" type="Label" parent="question_popup" index="3"]
+[node name="question_label" type="Label" parent="question_popup" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -168,7 +170,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "BBCode", "Hint", "Rect", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="answer1" type="Button" parent="question_popup" index="4"]
+[node name="answer1" type="Button" parent="question_popup" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -191,7 +193,7 @@ shortcut = null
 group = null
 flat = true
 align = 1
-_sections_unfolded = [ "Size Flags" ]
+_sections_unfolded = [ "Material", "Size Flags", "Visibility" ]
 
 [node name="ans1_label" type="Label" parent="question_popup/answer1" index="0"]
 
@@ -208,7 +210,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "12"
 percent_visible = 1.0
@@ -216,7 +218,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="answer2" type="Button" parent="question_popup" index="5"]
+[node name="answer2" type="Button" parent="question_popup" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -247,23 +249,23 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = -5.0
+margin_top = -7.0
 margin_right = 40.0
-margin_bottom = 40.0
+margin_bottom = 38.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 7 )
 text = "13"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="answer3" type="Button" parent="question_popup" index="6"]
+[node name="answer3" type="Button" parent="question_popup" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -303,7 +305,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 8 )
 text = "11"
 align = 1
 valign = 1
@@ -311,5 +313,11 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
+
+[connection signal="pressed" from="question_popup/answer1" to="." method="_on_answer1_pressed"]
+
+[connection signal="pressed" from="question_popup/answer2" to="." method="_on_answer2_pressed"]
+
+[connection signal="pressed" from="question_popup/answer3" to="." method="_on_answer3_pressed"]
 
 

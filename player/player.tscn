@@ -65,6 +65,15 @@ scale = Vector2( 2.41663, 6.77654 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="notifier" type="VisibilityNotifier2D" parent="." index="3"]
+
+position = Vector2( -2319.38, -795.16 )
+scale = Vector2( 4.17786, 7.97889 )
+rect = Rect2( -10, -10, 20, 20 )
+_sections_unfolded = [ "Transform" ]
+
 [connection signal="tree_entered" from="." to="." method="_on_player_tree_entered"]
+
+[connection signal="screen_exited" from="notifier" to="." method="_on_notifier_screen_exited"]
 
 

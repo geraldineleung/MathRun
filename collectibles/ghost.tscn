@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 11.0676, 10 )
 
-[node name="ghost" type="Area2D" index="0"]
+[node name="ghost" type="Area2D"]
 
 position = Vector2( 510.481, 202.9 )
 scale = Vector2( 0.6, 0.6 )
@@ -35,8 +35,6 @@ position = Vector2( -100.197, 1.59876 )
 scale = Vector2( 37.1008, 4.37882 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
-
-[connection signal="area_entered" from="." to="." method="_on_gem_area_entered"]
 
 [connection signal="body_entered" from="." to="." method="_on_gem_body_entered"]
 
