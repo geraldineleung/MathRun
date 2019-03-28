@@ -8,12 +8,7 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
-
 [sub_resource type="RectangleShape2D" id=2]
-
-custom_solver_bias = 0.0
 extents = Vector2( 10, 10.077 )
 
 [node name="Game" type="Node"]
@@ -31,77 +26,37 @@ pause_mode = 2
 
 [node name="player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 2035.33, 1073.95 )
-_sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="question_popup_container" parent="." index="5" instance=ExtResource( 4 )]
+[node name="question_popup_container" parent="." instance=ExtResource( 4 )]
 
-[node name="Pause" type="Control" parent="." index="6"]
+[node name="question_popup_container" parent="." instance=ExtResource( 4 )]
+
+[node name="wall" type="StaticBody2D" parent="."]
+position = Vector2( 149.545, 299.76 )
+scale = Vector2( 0.908688, 9.3292 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
+position = Vector2( 17.0982, -0.0427017 )
+scale = Vector2( 2.48889, 3.26234 )
+shape = SubResource( 1 )
+
+[node name="wall2" type="StaticBody2D" parent="."]
+position = Vector2( 660.025, 301.052 )
+scale = Vector2( 0.908688, 9.3292 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2"]
+position = Vector2( -13.5577, -0.268105 )
+scale = Vector2( 2.48889, 3.26234 )
+shape = SubResource( 2 )
 
 [node name="Pause" type="Control" parent="."]
 pause_mode = 2
 margin_right = 40.0
 margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 script = ExtResource( 5 )
-_sections_unfolded = [ "Pause", "Visibility" ]
-
-[node name="ColorRect" type="ColorRect" parent="Pause" index="0"]
-script = ExtResource( 4 )
 
 [node name="ColorRect" type="ColorRect" parent="Pause"]
-visible = false
-margin_right = 797.0
-margin_bottom = 600.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-color = Color( 0.921875, 0.653257, 0.140442, 0.392157 )
-_sections_unfolded = [ "Visibility" ]
+margin_right = 803.0
+margin_bottom = 605.0
+color = Color( 0, 0, 0, 0.45098 )
 
-[node name="wall" type="StaticBody2D" parent="." index="7"]
-
-position = Vector2( 149.545, 299.76 )
-scale = Vector2( 0.908688, 9.3292 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall" index="0"]
-
-position = Vector2( 17.0982, -0.0427017 )
-scale = Vector2( 2.48889, 3.26234 )
-shape = SubResource( 1 )
-
-[node name="wall2" type="StaticBody2D" parent="." index="8"]
-
-position = Vector2( 660.025, 301.052 )
-scale = Vector2( 0.908688, 9.3292 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2" index="0"]
-
-position = Vector2( -13.5577, -0.268105 )
-scale = Vector2( 2.48889, 3.26234 )
-shape = SubResource( 2 )
-color = Color( 0, 0, 0, 0.392157 )
-
-
-[node name="question_popup_container" parent="." index="6" instance=ExtResource( 5 )]
