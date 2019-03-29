@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://game/MenuPageTemplate.tscn" type="PackedScene" id=1]
-[ext_resource path="res://game/settings.gd" type="Script" id=2]
+[ext_resource path="res://game/difficulty_option.gd" type="Script" id=2]
+[ext_resource path="res://game/operation_option.gd" type="Script" id=3]
 
 [node name="TemplatePage" index="0" instance=ExtResource( 1 )]
 
@@ -10,34 +11,36 @@ margin_top = -0.666656
 margin_bottom = -0.666626
 
 [node name="VBoxContainer" parent="CenterContainer" index="0"]
-margin_top = 204.0
-margin_bottom = 396.0
-script = ExtResource( 2 )
-dropdown_path = NodePath("DifficultyButton")
+margin_top = 187.0
+margin_bottom = 413.0
 
 [node name="Difficulty" type="Label" parent="CenterContainer/VBoxContainer" index="1"]
 margin_top = 64.0
 margin_right = 218.0
-margin_bottom = 78.0
-text = "Difficulty: Easy, Medium, Hard"
+margin_bottom = 95.0
+text = "
+Difficulty:"
 
 [node name="DifficultyButton" type="OptionButton" parent="CenterContainer/VBoxContainer" index="2"]
-margin_top = 82.0
+margin_top = 99.0
 margin_right = 218.0
-margin_bottom = 102.0
+margin_bottom = 119.0
+script = ExtResource( 2 )
 
 [node name="Operations" type="Label" parent="CenterContainer/VBoxContainer" index="3"]
-margin_top = 106.0
+margin_top = 123.0
 margin_right = 218.0
-margin_bottom = 120.0
-text = "Math Operations:"
+margin_bottom = 154.0
+text = "
+Math Operations:"
 
 [node name="OperationsButton" type="OptionButton" parent="CenterContainer/VBoxContainer" index="4"]
-margin_top = 124.0
+margin_top = 158.0
 margin_right = 218.0
-margin_bottom = 144.0
+margin_bottom = 178.0
+script = ExtResource( 3 )
 
 [node name="Button" parent="CenterContainer/VBoxContainer" index="5"]
-margin_top = 148.0
-margin_bottom = 192.0
+margin_top = 182.0
+margin_bottom = 226.0
 
