@@ -18,6 +18,10 @@ func _on_gem_body_entered(body):
 func move_gems():
 	translate(Vector2(0,4))
 
+
+
 func show_question():
 	print("paused")
 	p.pop_question()
+	
+	
