@@ -13,6 +13,9 @@ var ans
 func _ready():
 	pass
 
+func print_difficulty():
+	print(game_settings.difficulty)
+
 func randomize_question():
 	randomize()
 	rand_num1 = str(randi() % 10)

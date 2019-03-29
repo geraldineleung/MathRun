@@ -1,8 +1,11 @@
 extends VBoxContainer
 
 # Declare member variables here. Examples:
-var difficulty = "Easy"
-var operation = "+"
+#var difficulty = "Easy"
+#var operation = "+"
+#onready var settings = get_node("root/game_settings")
+#var d = settings.difficulty
+#var o = settings.operation
 
 export(NodePath) var dropdown_path
 onready var DifficultyButton = get_node(dropdown_path)
@@ -23,6 +26,6 @@ func add_items():
 	
 	
 func on_item_selected(id):
-	difficulty = str(DifficultyButton.get_item_text(id))
-	print(difficulty)
+	game_settings.difficulty = str(DifficultyButton.get_item_text(id))
+	print(game_settings.difficulty)
 
