@@ -1,3 +1,4 @@
+#script:main
 extends Node
 
 onready var ghost = preload("res://collectibles/ghost.tscn")
@@ -12,7 +13,7 @@ onready var player = preload("res://player/player.gd")
 #to change main scene: project settings >> application
 
 var screensize
-var score = 0
+
 const GHOST_TIMER_MAX = 500
 const COIN_TIMER_MAX = 50
 const TREE_TIMER_MAX = 90
@@ -64,3 +65,21 @@ func spawn_trees(num):
         var t = tree.instance()
         tree_container.add_child(t)
         t.set_position(Vector2(rand_range(270, 550), rand_range(-10, -300)))
+
+var score_current = 0 setget _set_score_best
+var score_best= 0 setget _set_score_current
+
+signal score_best_changed
+signal score_current_changed
+
+
+func _set_score_best(new_value):
+	score_best = new_value
+	emit_signal("score_best_changed")
+	pass
+
+
+func _set_score_current(new_value):
+	score_current = new_value
+	emit_signal("score_current_chnged")
+	pass
