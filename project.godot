@@ -21,7 +21,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-new_script="*res://new_script.gd"
+game_settings="*res://game_settings.gd"
 
 [display]
 
