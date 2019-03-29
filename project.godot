@@ -19,6 +19,10 @@ config/name="MathRun"
 run/main_scene="res://menu/title_screen/title_screen.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+new_script="*res://new_script.gd"
+
 [display]
 
 window/size/width=800

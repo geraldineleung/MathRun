@@ -1,4 +1,5 @@
 extends Node2D
+onready var info = get_node("/root/new_script")
 
 var math_op = ["+", "-", "x"]
 var rand_num1 = 1
@@ -64,23 +65,29 @@ func _process(delta):
 
 func _on_answer1_pressed():
 	if $question_popup/answer1/ans1_label.text == str(right_ans):
+		info.score_current+=20
 		print("good")
 	else:
+		info.score_current-=5
 		print("wrong")
 	get_tree().paused = false
 
 
 func _on_answer2_pressed():
 	if $question_popup/answer2/ans2_label.text == str(right_ans):
+		info.score_current+=20
 		print("good")
 	else:
+		info.score_current-=5
 		print("wrong")
 	get_tree().paused = false
 
 
 func _on_answer3_pressed():
 	if $question_popup/answer3/ans3_label.text == str(right_ans):
+		info.score_current+=20
 		print("good")
 	else:
+		info.score_current-=10
 		print("wrong")
 	get_tree().paused = false
