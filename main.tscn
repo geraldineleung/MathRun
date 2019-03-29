@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://background/background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Pause.gd" type="Script" id=4]
-[ext_resource path="res://question_display/question_popup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://question_display/question_popup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Pause.gd" type="Script" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 10.077 )
 
 [node name="Game" type="Node"]
 pause_mode = 1
@@ -22,17 +27,36 @@ pause_mode = 2
 [node name="player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 2035.33, 1073.95 )
 
+[node name="question_popup_container" parent="." instance=ExtResource( 4 )]
+
+[node name="question_popup_container" parent="." instance=ExtResource( 4 )]
+
+[node name="wall" type="StaticBody2D" parent="."]
+position = Vector2( 149.545, 299.76 )
+scale = Vector2( 0.908688, 9.3292 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
+position = Vector2( 17.0982, -0.0427017 )
+scale = Vector2( 2.48889, 3.26234 )
+shape = SubResource( 1 )
+
+[node name="wall2" type="StaticBody2D" parent="."]
+position = Vector2( 660.025, 301.052 )
+scale = Vector2( 0.908688, 9.3292 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2"]
+position = Vector2( -13.5577, -0.268105 )
+scale = Vector2( 2.48889, 3.26234 )
+shape = SubResource( 2 )
+
 [node name="Pause" type="Control" parent="."]
 pause_mode = 2
 margin_right = 40.0
 margin_bottom = 40.0
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 
 [node name="ColorRect" type="ColorRect" parent="Pause"]
-visible = false
-margin_right = 797.0
-margin_bottom = 600.0
-color = Color( 0, 0, 0, 0.392157 )
+margin_right = 803.0
+margin_bottom = 605.0
+color = Color( 0, 0, 0, 0.45098 )
 
-
-[node name="question_popup_container" parent="." index="6" instance=ExtResource( 5 )]

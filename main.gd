@@ -6,13 +6,15 @@ onready var tree = preload("res://obstacles/tree.tscn")
 onready var ghost_container = get_node("gem_container")
 onready var coin_container = get_node("coin_container")
 onready var tree_container = get_node("tree_container")
+onready var player = preload("res://player/player.gd")
+
 
 #to change main scene: project settings >> application
 
 var screensize
 var score = 0
 const GHOST_TIMER_MAX = 500
-const COIN_TIMER_MAX = 100
+const COIN_TIMER_MAX = 50
 const TREE_TIMER_MAX = 90
 var ghost_spawn_timer = 0
 var coin_spawn_timer = 0
@@ -22,7 +24,6 @@ func _ready():
 	randomize()
 	screensize = get_viewport().get_visible_rect().size
 	set_process(true)
-	spawn_ghost(1)
 	spawn_coins(2)
 	spawn_trees(1)
 
@@ -34,7 +35,7 @@ func _process(delta):
 		spawn_ghost(1)
 		ghost_spawn_timer = 0
 	if coin_spawn_timer >= COIN_TIMER_MAX:
-		spawn_coins(3)
+		spawn_coins(1)
 		coin_spawn_timer = 0
 	if tree_spawn_timer >= TREE_TIMER_MAX:
 		spawn_trees(1)
@@ -63,4 +64,3 @@ func spawn_trees(num):
         var t = tree.instance()
         tree_container.add_child(t)
         t.set_position(Vector2(rand_range(270, 550), rand_range(-10, -300)))
-

@@ -4,6 +4,9 @@ const SPEED = 400
 var movedir = Vector2(0,0)
 var spritedir = "up"
 
+func _ready():
+	get_node("notifier").connect("screen_exited", self, "_on_notifier_screen_exited")
+
 func _physics_process(delta):
 	controls_loop()
 	movement_loop()
@@ -39,4 +42,8 @@ func anim_switch(animation):
 	if $anim.current_animation != newanim:
 		$anim.play(newanim)
 
+func _on_notifier_screen_exited():
+	game_over()
 
+func game_over():
+	get_tree().change_scene("res://game_over.tscn")

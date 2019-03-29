@@ -1,7 +1,7 @@
 extends Area2D
 
 func _ready():
-	pass
+	get_node("coin_notifier").connect("screen_exited", self, "_on_coin_notifier_screen_exited")
 
 func _physics_process(delta):
 	move_coins()
@@ -18,3 +18,6 @@ func spin_coin(animation):
 	var newanim = str(animation,"spin")
 	if $anim.current_animation != newanim:
 		$anim.play(newanim)
+
+func _on_coin_notifier_screen_exited():
+	queue_free()

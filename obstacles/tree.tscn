@@ -32,4 +32,12 @@ scale = Vector2( 1.25257, 3.21729 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="tree_notifier" type="VisibilityNotifier2D" parent="." index="2"]
+
+position = Vector2( -0.0444727, 0.630091 )
+scale = Vector2( 1.63042, 4.23361 )
+rect = Rect2( -10, -10, 20, 20 )
+
+[connection signal="screen_exited" from="tree_notifier" to="." method="_on_tree_notifier_screen_exited"]
+
 

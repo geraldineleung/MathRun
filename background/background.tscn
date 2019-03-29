@@ -16,7 +16,7 @@ texture = ExtResource( 1 )
 
 material = ExtResource( 2 )
 position = Vector2( 180, 0 )
-scale = Vector2( 1.11663, 0.828729 )
+scale = Vector2( 1.11663, 0.831025 )
 texture = ExtResource( 3 )
 centered = false
 script = ExtResource( 4 )
