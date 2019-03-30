@@ -22,6 +22,7 @@ func move_gems():
 
 func show_question():
 	print("paused")
+	print(game_settings.difficulty)
 	p.pop_question()
 	
 	

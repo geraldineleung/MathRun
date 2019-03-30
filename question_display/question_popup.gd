@@ -1,4 +1,5 @@
 extends Node2D
+
 onready var info = get_node("/root/new_script")
 
 var math_op = ["+", "-", "x"]
@@ -14,14 +15,39 @@ var ans
 func _ready():
 	pass
 
-func print_difficulty():
-	print(game_settings.difficulty)
+func get_questions_by_difficulty():
+	if game_settings.difficulty == "Easy":
+		randomize_question_easy()
+	elif game_settings.difficulty == "Medium":
+		randomize_question_medium()
+	elif game_settings.difficulty == "Hard":
+		randomize_question_hard()
 
-func randomize_question():
+func randomize_question_easy():
 	randomize()
-	rand_num1 = str(randi() % 10)
-	rand_num2 = str(randi() % 10)
+	rand_num1 = randi() % 10
+	rand_num2 = randi() % 10
 	operand = math_op[randi() % math_op.size()]
+
+func randomize_question_medium():
+	randomize()
+	rand_num1 = randi() % 100
+	operand = math_op[randi() % math_op.size()]
+	if operand == "x":
+		rand_num2 = randi() % 10
+	else:
+		rand_num1 = randi() % 100
+
+func randomize_question_hard():
+	randomize()
+	rand_num1 = randi() % 1000
+	operand = math_op[randi() % math_op.size()]
+	if operand == "x":
+		rand_num2 = randi() % 10
+	elif operand == "-":
+		rand_num2 = randi() % 100
+	else:
+		rand_num2 = randi() % 1000
 
 func randomize_answer():
 	randomize()
@@ -35,28 +61,34 @@ func randomize_answer():
 func answers(op):
 	match op:
 		"+":
-			right_ans = int(rand_num1) + int(rand_num2)
+			right_ans = rand_num1 + rand_num2
 			wrong_ans1 = right_ans + 3
 			wrong_ans2 = right_ans - 2
 		"-":
 			if rand_num1 < rand_num2:
-				right_ans = int(rand_num2) - int(rand_num1)
+				right_ans = rand_num2 - rand_num1
 			else:
-				right_ans = int(rand_num1) - int(rand_num2)
+				right_ans = rand_num1 - rand_num2
 			wrong_ans1 = right_ans + 3
 			wrong_ans2 = right_ans - 2
 		"x":
-			right_ans = int(rand_num1) * int(rand_num2)
-			wrong_ans1 = int(rand_num1) * (int(rand_num2)+3)
-			wrong_ans2 = int(rand_num1) * (int(rand_num2)+1)
+			right_ans = rand_num1 * rand_num2
+			wrong_ans1 = rand_num1 * (rand_num2)+3
+			wrong_ans2 = rand_num1 * (rand_num2)+1
 	answers.append(right_ans)
 	answers.append(wrong_ans1)
 	answers.append(wrong_ans2)
 
 func pop_question():
-	randomize_question()
+	get_questions_by_difficulty()
 	answers(operand)
-	$question_popup/question_label.text = rand_num1 + " " + operand + " " + rand_num2
+	if operand == "-":
+		if rand_num1 < rand_num2:
+			$question_popup/question_label.text = str(rand_num2) + " " + operand + " " + str(rand_num1)
+		else:
+			$question_popup/question_label.text = str(rand_num1) + " " + operand + " " + str(rand_num2)
+	else:
+		$question_popup/question_label.text = str(rand_num1) + " " + operand + " " + str(rand_num2)
 	$question_popup/answer1/ans1_label.text = randomize_answer()
 	$question_popup/answer2/ans2_label.text = randomize_answer()
 	$question_popup/answer3/ans3_label.text = randomize_answer()
