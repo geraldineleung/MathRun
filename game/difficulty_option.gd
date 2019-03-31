@@ -22,6 +22,6 @@ func add_items():
 	
 	
 func on_item_selected(id):
-	difficulty = str(DifficultyButton.get_item_text(id))
+	game_settings.difficulty = str(DifficultyButton.get_item_text(id))
 	print(difficulty)
 	

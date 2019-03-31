@@ -22,6 +22,6 @@ func add_items():
 	
 	
 func on_item_selected(id):
-	operation = str(OperationsButton.get_item_text(id))
+	game_settings.operation = str(OperationsButton.get_item_text(id))
 	print(operation)
 
