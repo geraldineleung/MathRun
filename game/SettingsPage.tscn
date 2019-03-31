@@ -11,8 +11,8 @@ margin_top = -0.666656
 margin_bottom = -0.666626
 
 [node name="VBoxContainer" parent="CenterContainer" index="0"]
-margin_top = 187.0
-margin_bottom = 413.0
+margin_top = 178.0
+margin_bottom = 422.0
 
 [node name="Difficulty" type="Label" parent="CenterContainer/VBoxContainer" index="1"]
 margin_top = 64.0
@@ -40,7 +40,12 @@ margin_right = 218.0
 margin_bottom = 178.0
 script = ExtResource( 3 )
 
-[node name="Button" parent="CenterContainer/VBoxContainer" index="5"]
+[node name="Label2" type="Label" parent="CenterContainer/VBoxContainer" index="5"]
 margin_top = 182.0
-margin_bottom = 226.0
+margin_right = 218.0
+margin_bottom = 196.0
+
+[node name="Button" parent="CenterContainer/VBoxContainer" index="6"]
+margin_top = 200.0
+margin_bottom = 244.0
 
