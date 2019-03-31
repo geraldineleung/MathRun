@@ -33,18 +33,18 @@ align = 1
 valign = 1
 
 [node name="quit_button" type="Button" parent="."]
-margin_left = 342.0
-margin_top = 397.0
-margin_right = 502.0
-margin_bottom = 452.0
+margin_left = 323.995
+margin_top = 396.143
+margin_right = 483.995
+margin_bottom = 451.143
 custom_fonts/font = SubResource( 2 )
 text = "Quit"
 
 [node name="restart_button" type="Button" parent="."]
-margin_left = 338.0
-margin_top = 278.0
-margin_right = 498.0
-margin_bottom = 333.0
+margin_left = 321.71
+margin_top = 274.57
+margin_right = 481.71
+margin_bottom = 329.57
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 action_mode = 0

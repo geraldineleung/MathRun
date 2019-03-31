@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://question_display/question_popup.gd" type="Script" id=1]
 [ext_resource path="res://montserrat/Montserrat-Black.otf" type="DynamicFontData" id=2]
@@ -23,13 +23,22 @@ font_data = ExtResource( 3 )
 size = 36
 font_data = ExtResource( 2 )
 
+[sub_resource type="StyleBoxLine" id=9]
+color = Color( 0.160784, 0.160784, 0.184314, 1 )
+
 [sub_resource type="DynamicFont" id=6]
 size = 36
 font_data = ExtResource( 2 )
 
+[sub_resource type="StyleBoxLine" id=10]
+color = Color( 0.160784, 0.160784, 0.184314, 1 )
+
 [sub_resource type="DynamicFont" id=7]
 size = 36
 font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxLine" id=11]
+color = Color( 0.156863, 0.156863, 0.176471, 1 )
 
 [sub_resource type="DynamicFont" id=8]
 size = 36
@@ -38,8 +47,13 @@ font_data = ExtResource( 2 )
 [node name="question_popup_container" type="Node2D"]
 pause_mode = 2
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
+}
 
 [node name="question_popup" type="PopupDialog" parent="."]
+visible = true
 margin_left = 203.0
 margin_top = 154.0
 margin_right = 603.0
@@ -75,45 +89,58 @@ align = 1
 valign = 1
 
 [node name="answer1" type="Button" parent="question_popup"]
-margin_left = 67.0
-margin_top = 180.0
-margin_right = 105.0
-margin_bottom = 213.0
+margin_left = 49.3406
+margin_top = 180.703
+margin_right = 129.341
+margin_bottom = 215.703
+grow_horizontal = 0
+custom_styles/focus = SubResource( 9 )
 flat = true
 
 [node name="ans1_label" type="Label" parent="question_popup/answer1"]
-margin_top = -6.0
-margin_right = 40.0
-margin_bottom = 39.0
+margin_left = -1.0
+margin_top = -5.0
+margin_right = 79.0
+margin_bottom = 40.0
+size_flags_horizontal = 5
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "12"
+align = 1
+valign = 1
 
 [node name="answer2" type="Button" parent="question_popup"]
-margin_left = 184.0
-margin_top = 180.0
-margin_right = 221.0
-margin_bottom = 214.0
+margin_left = 166.631
+margin_top = 181.362
+margin_right = 246.631
+margin_bottom = 216.362
+grow_horizontal = 0
+custom_styles/focus = SubResource( 10 )
 flat = true
 
 [node name="ans2_label" type="Label" parent="question_popup/answer2"]
-margin_top = -7.0
-margin_right = 40.0
-margin_bottom = 38.0
+margin_left = 1.0
+margin_top = -6.0
+margin_right = 81.0
+margin_bottom = 39.0
+size_flags_horizontal = 5
 custom_fonts/font = SubResource( 7 )
 text = "13"
+align = 1
 
 [node name="answer3" type="Button" parent="question_popup"]
-margin_left = 296.0
-margin_top = 179.0
-margin_right = 333.0
-margin_bottom = 211.0
+margin_left = 281.015
+margin_top = 181.384
+margin_right = 361.015
+margin_bottom = 216.384
+grow_horizontal = 0
+custom_styles/focus = SubResource( 11 )
 flat = true
 
 [node name="ans3_label" type="Label" parent="question_popup/answer3"]
 margin_left = -1.0
 margin_top = -6.0
-margin_right = 39.0
+margin_right = 80.0
 margin_bottom = 39.0
 custom_fonts/font = SubResource( 8 )
 text = "11"
