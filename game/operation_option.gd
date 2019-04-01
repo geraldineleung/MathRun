@@ -1,27 +1,65 @@
-extends OptionButton
+extends VBoxContainer
 
 # Declare member variables here. Examples:
-var difficulty = "Easy"
-var operation = "+"
+# game_settings.operation = ["+", "-", "x"]
 
 export(NodePath) var dropdown_path
-onready var OperationsButton = get_node(dropdown_path)
+onready var ButtonPath = get_node(dropdown_path)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-	OperationsButton.connect("item_selected",self,"on_item_selected")
+	load_operations()
 	
-	add_items()
+	for button in ButtonPath.get_children():
+		button.connect("pressed", self, "_on_Button_pressed",[button])
+		
 	
+	check_none_selected()
+		
 
-func add_items():
-	OperationsButton.add_item("+")
-	OperationsButton.add_item("-")
-	OperationsButton.add_item("x")
+
+func load_operations():
 	
+	print("load")
+
+
+
+func _on_Button_pressed(button):
 	
-func on_item_selected(id):
-	game_settings.operation = str(OperationsButton.get_item_text(id))
-	print(operation)
+	if button.name == 'AddBox':
+		if button.pressed == true:
+			game_settings.add_bool = true
+			game_settings.operation.append("+")
+		else:
+			game_settings.add_bool = false
+			game_settings.operation.erase("+")
+	if button.name == 'SubBox':
+		if button.pressed == true:
+			game_settings.sub_bool = true
+			game_settings.operation.append("-")
+		else:
+			game_settings.sub_bool = false
+			game_settings.operation.erase("-")
+	if button.name == 'MultBox':
+		if button.pressed == true:
+			game_settings.mult_bool = true
+			game_settings.operation.append("x")
+		else:
+			game_settings.mult_bool = false
+			game_settings.operation.erase("x")
+	
+	print(game_settings.operation)
+
+
+
+#set all to true if the user selects none
+func check_none_selected():
+	
+	if (game_settings.add_bool == false) and (game_settings.sub_bool == false) and (game_settings.mult_bool == false):
+		game_settings.add_bool = true
+		game_settings.sub_bool = true
+		game_settings.mult_bool = true
+		game_settings.operation = ["+", "-", "x"]
+	
 

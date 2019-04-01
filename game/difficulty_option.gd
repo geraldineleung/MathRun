@@ -1,8 +1,6 @@
 extends OptionButton
 
 # Declare member variables here. Examples:
-var difficulty = "Easy"
-var operation = "+"
 
 export(NodePath) var dropdown_path
 onready var DifficultyButton = get_node(dropdown_path)
@@ -10,10 +8,15 @@ onready var DifficultyButton = get_node(dropdown_path)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-	DifficultyButton.connect("item_selected",self,"on_item_selected")
-	
 	add_items()
 	
+	DifficultyButton.text = game_settings.difficulty
+	
+	
+	DifficultyButton.connect("item_selected",self,"on_item_selected")
+
+
+
 
 func add_items():
 	DifficultyButton.add_item("Easy")
@@ -23,5 +26,5 @@ func add_items():
 	
 func on_item_selected(id):
 	game_settings.difficulty = str(DifficultyButton.get_item_text(id))
-	print(difficulty)
+
 	

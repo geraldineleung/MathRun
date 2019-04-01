@@ -13,7 +13,7 @@ func _ready():
 	var file = File.new()
 	file.open("res://game/Highscores.txt", file.READ_WRITE)
 	file.seek_end()
-	file.store_string("\nPlayer\n"+ str(info.score_current) +"\n")
+	file.store_string("\nPlayer\n"+ str(info.score_current))
 	file.close()
 	
   
