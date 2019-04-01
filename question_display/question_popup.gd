@@ -117,6 +117,8 @@ func _on_answer1_pressed():
 		print("good")
 	else:
 		info.score_current-=10
+		if info.score_current < 0:
+			info.score_current = 0
 		print("wrong")
 	get_tree().paused = false
 
@@ -127,6 +129,8 @@ func _on_answer2_pressed():
 		print("good")
 	else:
 		info.score_current-=10
+		if info.score_current < 0:
+			info.score_current = 0
 		print("wrong")
 	get_tree().paused = false
 
@@ -137,5 +141,7 @@ func _on_answer3_pressed():
 		print("good")
 	else:
 		info.score_current-=10
+		if info.score_current < 0:
+			info.score_current = 0
 		print("wrong")
 	get_tree().paused = false
