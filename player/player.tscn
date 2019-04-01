@@ -4,7 +4,6 @@
 [ext_resource path="res://player/unicorn_atlas.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
-
 resource_name = "walkup"
 length = 1.75
 loop = true
@@ -24,56 +23,30 @@ tracks/0/keys = {
 
 [sub_resource type="RectangleShape2D" id=2]
 
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
-
 [node name="player" type="KinematicBody2D"]
-
 position = Vector2( 2009.64, 1014.85 )
 scale = Vector2( 0.7, 0.7 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="anim" type="AnimationPlayer" parent="." index="0"]
-
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
+[node name="anim" type="AnimationPlayer" parent="."]
 playback_speed = 3.0
 anims/walkup = SubResource( 1 )
-blend_times = [  ]
-_sections_unfolded = [ "Playback Options" ]
 
-[node name="Sprite" type="Sprite" parent="." index="1"]
-
+[node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -2317.49, -795.559 )
 texture = ExtResource( 2 )
 vframes = 12
 hframes = 24
 frame = 14
-_sections_unfolded = [ "Animation", "Offset", "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
-
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -2321.49, -796.14 )
 scale = Vector2( 2.41663, 6.77654 )
 shape = SubResource( 2 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="notifier" type="VisibilityNotifier2D" parent="." index="3"]
-
+[node name="notifier" type="VisibilityNotifier2D" parent="."]
 position = Vector2( -2319.38, -795.16 )
 scale = Vector2( 4.17786, 7.97889 )
-rect = Rect2( -10, -10, 20, 20 )
-_sections_unfolded = [ "Transform" ]
 
 [connection signal="tree_entered" from="." to="." method="_on_player_tree_entered"]
-
 [connection signal="screen_exited" from="notifier" to="." method="_on_notifier_screen_exited"]
-
-

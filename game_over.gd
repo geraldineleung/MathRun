@@ -1,6 +1,10 @@
 extends CanvasLayer
 
 onready var info = get_node("/root/new_script")
+
+func _ready():
+	var game_settings = get_node("/root/game_settings")
+	game_settings.current_scene = "GameOver"
 func _on_quit_button_pressed():
 	get_tree().change_scene("res://menu/title_screen/title_screen.tscn")
 

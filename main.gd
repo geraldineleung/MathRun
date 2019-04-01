@@ -27,6 +27,8 @@ func _ready():
 	set_process(true)
 	spawn_coins(2)
 	spawn_trees(1)
+	var game_settings = get_node("/root/game_settings")
+	game_settings.current_scene = "Game"
 
 func _process(delta):
 	ghost_spawn_timer+=1

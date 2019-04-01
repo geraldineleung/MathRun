@@ -1,11 +1,9 @@
 extends Control
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
+	var game_settings = get_node("/root/game_settings")
+	game_settings.current_scene = "Title"
 	for button in $Menu/CenterRow/Buttons.get_children():
 		button.connect("pressed", self, "_on_Button_pressed", [button.scene_to_load])
 
