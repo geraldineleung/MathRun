@@ -36,7 +36,7 @@ func randomize_question_medium():
 	if operand == "x":
 		rand_num2 = randi() % 10
 	else:
-		rand_num1 = randi() % 100
+		rand_num2 = randi() % 100
 
 func randomize_question_hard():
 	randomize()
@@ -73,8 +73,16 @@ func answers(op):
 			wrong_ans2 = right_ans - 2
 		"x":
 			right_ans = rand_num1 * rand_num2
-			wrong_ans1 = rand_num1 * (rand_num2)+3
-			wrong_ans2 = rand_num1 * (rand_num2)+1
+			if right_ans == 0:
+				if rand_num1 == 0:
+					wrong_ans1 = rand_num2 + 3
+					wrong_ans2 = rand_num2
+				elif rand_num2 == 0:
+					wrong_ans1 = rand_num1 + 3
+					wrong_ans2 = rand_num1
+			else:
+				wrong_ans1 = rand_num1 * (rand_num2)+3
+				wrong_ans2 = rand_num1 * (rand_num2)+1
 	answers.append(right_ans)
 	answers.append(wrong_ans1)
 	answers.append(wrong_ans2)
