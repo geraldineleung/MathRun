@@ -63,23 +63,28 @@ func answers(op):
 		"+":
 			right_ans = rand_num1 + rand_num2
 			wrong_ans1 = right_ans + 3
-			wrong_ans2 = right_ans - 2
+			wrong_ans2 = right_ans + 2
 		"-":
 			if rand_num1 < rand_num2:
 				right_ans = rand_num2 - rand_num1
 			else:
 				right_ans = rand_num1 - rand_num2
-			wrong_ans1 = right_ans + 3
-			wrong_ans2 = right_ans - 2
+			wrong_ans1 = right_ans + 5
+			wrong_ans2 = right_ans + 2
+
 		"x":
 			right_ans = rand_num1 * rand_num2
 			if right_ans == 0:
-				if rand_num1 == 0:
+				if rand_num1 == 0 and rand_num2 == 0:
+					wrong_ans1 = rand_num1 + 2
+					wrong_ans2 = rand_num2 + 5
+				elif rand_num1 == 0 and rand_num2 != 0:
 					wrong_ans1 = rand_num2 + 3
 					wrong_ans2 = rand_num2
-				elif rand_num2 == 0:
+				elif rand_num2 == 0 and rand_num1 != 0:
 					wrong_ans1 = rand_num1 + 3
 					wrong_ans2 = rand_num1
+				
 			else:
 				wrong_ans1 = rand_num1 * (rand_num2)+3
 				wrong_ans2 = rand_num1 * (rand_num2)+1
