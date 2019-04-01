@@ -9,23 +9,57 @@ onready var ButtonPath = get_node(dropdown_path)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-	#print(get_parent().handle_this_button_press(CheckBox1))
-	
-	game_settings.operation = ["+", "-", "x"]
+	load_operations()
 	
 	for button in ButtonPath.get_children():
 		button.connect("pressed", self, "_on_Button_pressed",[button])
 		
+	
+	check_none_selected()
+		
+
+
+func load_operations():
+	
+	print("load")
+
+
 
 func _on_Button_pressed(button):
-	print(button.pressed)
 	
 	if button.name == 'AddBox':
-		print("hi")
+		if button.pressed == true:
+			game_settings.add_bool = true
+			game_settings.operation.append("+")
+		else:
+			game_settings.add_bool = false
+			game_settings.operation.erase("+")
 	if button.name == 'SubBox':
-		print("hey")
+		if button.pressed == true:
+			game_settings.sub_bool = true
+			game_settings.operation.append("-")
+		else:
+			game_settings.sub_bool = false
+			game_settings.operation.erase("-")
 	if button.name == 'MultBox':
-		print("hello")
+		if button.pressed == true:
+			game_settings.mult_bool = true
+			game_settings.operation.append("x")
+		else:
+			game_settings.mult_bool = false
+			game_settings.operation.erase("x")
+	
+	print(game_settings.operation)
 
 
+
+#set all to true if the user selects none
+func check_none_selected():
+	
+	if (game_settings.add_bool == false) and (game_settings.sub_bool == false) and (game_settings.mult_bool == false):
+		game_settings.add_bool = true
+		game_settings.sub_bool = true
+		game_settings.mult_bool = true
+		game_settings.operation = ["+", "-", "x"]
+	
 

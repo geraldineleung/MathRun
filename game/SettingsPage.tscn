@@ -31,6 +31,7 @@ Difficulty:"
 margin_top = 84.0
 margin_right = 165.0
 margin_bottom = 104.0
+text = "Choose difficulty"
 script = ExtResource( 2 )
 
 [node name="Operations" type="Label" parent="CenterContainer/VBoxContainer" index="3"]
