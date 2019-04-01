@@ -1,7 +1,7 @@
 extends Area2D
 onready var info = get_node("/root/new_script")
 func _ready():
-	print("again")
+
 	get_node("coin_notifier").connect("screen_exited", self, "_on_coin_notifier_screen_exited")
 
 func _physics_process(delta):

@@ -65,4 +65,3 @@ position = Vector2( 1.14734, -1.3886 )
 scale = Vector2( 1.60309, 1.88361 )
 
 [connection signal="body_entered" from="." to="." method="_on_coin_body_entered"]
-[connection signal="screen_exited" from="coin_notifier" to="." method="_on_coin_notifier_screen_exited"]

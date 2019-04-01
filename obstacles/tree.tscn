@@ -5,39 +5,21 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
-
 [node name="tree" type="KinematicBody2D"]
-
 position = Vector2( 299.826, 277.856 )
 scale = Vector2( 2.3, 2.3 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
-
+[node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.665054, -7.87572 )
 scale = Vector2( 1.25257, 3.21729 )
 shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="tree_notifier" type="VisibilityNotifier2D" parent="." index="2"]
-
+[node name="tree_notifier" type="VisibilityNotifier2D" parent="."]
 position = Vector2( -0.0444727, 0.630091 )
 scale = Vector2( 1.63042, 4.23361 )
-rect = Rect2( -10, -10, 20, 20 )
-
-[connection signal="screen_exited" from="tree_notifier" to="." method="_on_tree_notifier_screen_exited"]
-
 
