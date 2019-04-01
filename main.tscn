@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://background/background.tscn" type="PackedScene" id=2]
@@ -9,9 +9,13 @@
 [ext_resource path="res://lbl_score.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 18.1027 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 10, 10.077 )
+extents = Vector2( 10, 18.6112 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 292.258, 23.4015 )
 
 [sub_resource type="DynamicFont" id=3]
 font_data = ExtResource( 6 )
@@ -40,24 +44,30 @@ position = Vector2( 2035.33, 1073.95 )
 [node name="question_popup_container" parent="." instance=ExtResource( 4 )]
 
 [node name="wall" type="StaticBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 149.545, 299.76 )
 scale = Vector2( 0.908688, 9.3292 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
-position = Vector2( 17.0982, -0.0427017 )
+position = Vector2( 9.15264, 24.3357 )
 scale = Vector2( 2.48889, 3.26234 )
 shape = SubResource( 1 )
 
 [node name="wall2" type="StaticBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 660.025, 301.052 )
 scale = Vector2( 0.908688, 9.3292 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall2"]
-position = Vector2( -13.5577, -0.268105 )
+position = Vector2( -6.27292, 23.0232 )
 scale = Vector2( 2.48889, 3.26234 )
 shape = SubResource( 2 )
+
+[node name="wall3" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 229.116, -25.6249 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall3"]
+position = Vector2( 170.13, 2.07682 )
+shape = SubResource( 5 )
 
 [node name="Pause" type="Control" parent="."]
 pause_mode = 2
@@ -66,6 +76,7 @@ margin_bottom = 40.0
 script = ExtResource( 5 )
 
 [node name="ColorRect" type="ColorRect" parent="Pause"]
+visible = false
 margin_right = 803.0
 margin_bottom = 605.0
 color = Color( 0, 0, 0, 0.45098 )
@@ -73,10 +84,10 @@ color = Color( 0, 0, 0, 0.45098 )
 [node name="lbl_score" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -473.0
-margin_top = 26.0
-margin_right = -292.0
-margin_bottom = 76.0
+margin_left = -373.367
+margin_top = 23.6926
+margin_right = -278.367
+margin_bottom = 73.6926
 rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 34.25, 29.75 )
 custom_fonts/font = SubResource( 3 )
