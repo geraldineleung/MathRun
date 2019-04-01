@@ -1,27 +1,31 @@
-extends OptionButton
+extends VBoxContainer
 
 # Declare member variables here. Examples:
-var difficulty = "Easy"
-var operation = "+"
+# game_settings.operation = ["+", "-", "x"]
 
 export(NodePath) var dropdown_path
-onready var OperationsButton = get_node(dropdown_path)
+onready var ButtonPath = get_node(dropdown_path)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-	OperationsButton.connect("item_selected",self,"on_item_selected")
+	#print(get_parent().handle_this_button_press(CheckBox1))
 	
-	add_items()
+	game_settings.operation = ["+", "-", "x"]
 	
+	for button in ButtonPath.get_children():
+		button.connect("pressed", self, "_on_Button_pressed",[button])
+		
 
-func add_items():
-	OperationsButton.add_item("+")
-	OperationsButton.add_item("-")
-	OperationsButton.add_item("x")
+func _on_Button_pressed(button):
+	print(button.pressed)
 	
-	
-func on_item_selected(id):
-	game_settings.operation = str(OperationsButton.get_item_text(id))
-	print(operation)
+	if button.name == 'AddBox':
+		print("hi")
+	if button.name == 'SubBox':
+		print("hey")
+	if button.name == 'MultBox':
+		print("hello")
+
+
 

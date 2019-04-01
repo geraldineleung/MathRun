@@ -1,5 +1,5 @@
 extends Node
 
 var difficulty = "Easy"
-var operation = "+"
+var operation = ["+", "-", "x"]
 var current_scene = "Title"
