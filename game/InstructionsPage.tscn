@@ -7,22 +7,23 @@
 
 [node name="VBoxContainer" parent="CenterContainer" index="0"]
 margin_left = 25.0
-margin_top = 44.0
+margin_top = 51.0
 margin_right = 775.0
-margin_bottom = 556.0
+margin_bottom = 548.0
 
 [node name="Label" parent="CenterContainer/VBoxContainer" index="0"]
 margin_right = 750.0
+margin_bottom = 45.0
 text = "Instructions"
 
 [node name="instructions" type="TextureRect" parent="CenterContainer/VBoxContainer" index="1"]
-margin_top = 64.0
+margin_top = 49.0
 margin_right = 750.0
-margin_bottom = 464.0
+margin_bottom = 449.0
 texture = ExtResource( 2 )
 
 [node name="Button" parent="CenterContainer/VBoxContainer" index="2"]
-margin_top = 468.0
+margin_top = 453.0
 margin_right = 750.0
-margin_bottom = 512.0
+margin_bottom = 497.0
 

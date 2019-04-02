@@ -2,7 +2,7 @@ extends Node2D
 
 onready var info = get_node("/root/new_script")
 
-var math_op = ["+", "-", "x"]
+var math_op = game_settings.operation
 var rand_num1 = 1
 var rand_num2 = 1
 var operand = ""
