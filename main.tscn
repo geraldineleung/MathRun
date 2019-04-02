@@ -14,13 +14,13 @@ extents = Vector2( 10, 18.1027 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 10, 18.6112 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 292.258, 23.4015 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=5]
 font_data = ExtResource( 6 )
 
 [node name="Game" type="Node"]
@@ -48,7 +48,7 @@ position = Vector2( 149.545, 299.76 )
 scale = Vector2( 0.908688, 9.3292 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
-position = Vector2( 9.15264, 24.3357 )
+position = Vector2( 13.1975, 24.3357 )
 scale = Vector2( 2.48889, 3.26234 )
 shape = SubResource( 1 )
 
@@ -57,7 +57,7 @@ position = Vector2( 660.025, 301.052 )
 scale = Vector2( 0.908688, 9.3292 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall2"]
-position = Vector2( -6.27292, 23.0232 )
+position = Vector2( -10.1154, 23.0232 )
 scale = Vector2( 2.48889, 3.26234 )
 shape = SubResource( 2 )
 
@@ -67,7 +67,7 @@ position = Vector2( 229.116, -25.6249 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall3"]
 position = Vector2( 170.13, 2.07682 )
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 
 [node name="Pause" type="Control" parent="."]
 pause_mode = 2
@@ -90,7 +90,7 @@ margin_right = -278.367
 margin_bottom = 73.6926
 rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 34.25, 29.75 )
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.972549, 0.94902, 0.94902, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "0"
@@ -105,7 +105,7 @@ margin_top = -34.0
 margin_right = 402.0
 margin_bottom = 46.0
 rect_scale = Vector2( 2, 2 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.968627, 0.94902, 0.94902, 1 )
 custom_constants/line_spacing = 0
 custom_constants/shadow_offset_y = 1
