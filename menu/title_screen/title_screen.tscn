@@ -8,7 +8,6 @@
 [ext_resource path="res://menu/buttons/HighScoreButton.tscn" type="PackedScene" id=6]
 
 [node name="title_screen" type="Control"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -43,6 +42,7 @@ alignment = 1
 margin_right = 360.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 360, 60 )
+scene_to_load = "res://game/EnterNamePage.tscn"
 
 [node name="SettingsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 4 )]
 margin_top = 80.0

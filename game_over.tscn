@@ -43,12 +43,13 @@ align = 1
 valign = 1
 
 [node name="Score" type="Label" parent="."]
-margin_left = 332.0
-margin_top = 222.0
-margin_right = 491.0
-margin_bottom = 261.0
+margin_left = 217.0
+margin_top = 232.0
+margin_right = 606.0
+margin_bottom = 294.0
 custom_fonts/font = SubResource( 2 )
-text = "Score:"
+text = "Emily Score:"
+align = 1
 
 [node name="quit_button" type="Button" parent="."]
 margin_left = 323.995
@@ -60,9 +61,9 @@ text = "Quit"
 
 [node name="restart_button" type="Button" parent="."]
 margin_left = 321.71
-margin_top = 274.57
+margin_top = 306.57
 margin_right = 481.71
-margin_bottom = 329.57
+margin_bottom = 361.57
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 action_mode = 0

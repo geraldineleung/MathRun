@@ -6,3 +6,4 @@ var current_scene = "Title"
 var add_bool = true
 var sub_bool = true
 var mult_bool = true
+var username = "Player"
