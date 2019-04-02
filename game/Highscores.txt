@@ -4,7 +4,3 @@ Player
 30
 Emily
 1
-Tina
-22
-Player
-0
