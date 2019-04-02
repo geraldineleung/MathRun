@@ -1,5 +1,5 @@
 Player
-2
+1
 Player
 30
 Player
@@ -9,16 +9,6 @@ Player
 Player
 99
 Player
-5
-Player
-8
-Player
-3
-Player
-0
-Player
-0
-Player
-1
+13
 Player
 0

@@ -11,41 +11,69 @@ margin_top = -0.666656
 margin_bottom = -0.666626
 
 [node name="VBoxContainer" parent="CenterContainer" index="0"]
-margin_top = 178.0
-margin_bottom = 422.0
+margin_left = 317.0
+margin_top = 155.0
+margin_right = 482.0
+margin_bottom = 444.0
+
+[node name="Label" parent="CenterContainer/VBoxContainer" index="0"]
+margin_right = 165.0
+margin_bottom = 45.0
 
 [node name="Difficulty" type="Label" parent="CenterContainer/VBoxContainer" index="1"]
-margin_top = 64.0
-margin_right = 218.0
-margin_bottom = 95.0
+margin_top = 49.0
+margin_right = 165.0
+margin_bottom = 80.0
 text = "
 Difficulty:"
 
 [node name="DifficultyButton" type="OptionButton" parent="CenterContainer/VBoxContainer" index="2"]
-margin_top = 99.0
-margin_right = 218.0
-margin_bottom = 119.0
+margin_top = 84.0
+margin_right = 165.0
+margin_bottom = 104.0
+text = "Choose difficulty"
 script = ExtResource( 2 )
 
 [node name="Operations" type="Label" parent="CenterContainer/VBoxContainer" index="3"]
-margin_top = 123.0
-margin_right = 218.0
-margin_bottom = 154.0
+margin_top = 108.0
+margin_right = 165.0
+margin_bottom = 139.0
 text = "
 Math Operations:"
 
-[node name="OperationsButton" type="OptionButton" parent="CenterContainer/VBoxContainer" index="4"]
-margin_top = 158.0
-margin_right = 218.0
-margin_bottom = 178.0
+[node name="OpButton" type="VBoxContainer" parent="CenterContainer/VBoxContainer" index="4"]
+margin_top = 143.0
+margin_right = 165.0
+margin_bottom = 223.0
 script = ExtResource( 3 )
 
+[node name="AddBox" type="CheckBox" parent="CenterContainer/VBoxContainer/OpButton" index="0"]
+margin_right = 165.0
+margin_bottom = 24.0
+pressed = true
+text = "Add"
+
+[node name="SubBox" type="CheckBox" parent="CenterContainer/VBoxContainer/OpButton" index="1"]
+margin_top = 28.0
+margin_right = 165.0
+margin_bottom = 52.0
+pressed = true
+text = "Subtract"
+
+[node name="MultBox" type="CheckBox" parent="CenterContainer/VBoxContainer/OpButton" index="2"]
+margin_top = 56.0
+margin_right = 165.0
+margin_bottom = 80.0
+pressed = true
+text = "Multiply"
+
 [node name="Label2" type="Label" parent="CenterContainer/VBoxContainer" index="5"]
-margin_top = 182.0
-margin_right = 218.0
-margin_bottom = 196.0
+margin_top = 227.0
+margin_right = 165.0
+margin_bottom = 241.0
 
 [node name="Button" parent="CenterContainer/VBoxContainer" index="6"]
-margin_top = 200.0
-margin_bottom = 244.0
+margin_top = 245.0
+margin_right = 165.0
+margin_bottom = 289.0
 
