@@ -1,8 +1,12 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://question_display/question_popup.gd" type="Script" id=1]
 [ext_resource path="res://montserrat/Montserrat-Black.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://montserrat/Caveat-Regular.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=8]
+size = 24
+font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.329956, 0.816449, 0.828125, 1 )
@@ -30,17 +34,17 @@ color = Color( 0.160784, 0.160784, 0.184314, 1 )
 size = 36
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxLine" id=8]
+[sub_resource type="StyleBoxLine" id=9]
 color = Color( 0.160784, 0.160784, 0.184314, 1 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=10]
 size = 36
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxLine" id=10]
+[sub_resource type="StyleBoxLine" id=11]
 color = Color( 0.156863, 0.156863, 0.176471, 1 )
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=12]
 size = 36
 font_data = ExtResource( 2 )
 
@@ -51,6 +55,25 @@ __meta__ = {
 "_edit_horizontal_guides_": [  ],
 "_edit_vertical_guides_": [  ]
 }
+
+[node name="feedback_popup" type="Popup" parent="."]
+visible = true
+anchor_right = 0.43
+margin_left = 260.954
+margin_top = 218.0
+margin_right = 549.954
+margin_bottom = 317.0
+
+[node name="feedback_popup_label" type="Label" parent="feedback_popup"]
+margin_left = 15.0134
+margin_top = 15.9535
+margin_right = 273.013
+margin_bottom = 88.9535
+grow_horizontal = 0
+custom_fonts/font = SubResource( 8 )
+text = "wrong"
+align = 1
+valign = 1
 
 [node name="question_popup" type="PopupDialog" parent="."]
 visible = true
@@ -77,16 +100,19 @@ valign = 1
 autowrap = true
 
 [node name="question_label" type="Label" parent="question_popup"]
-margin_left = 24.0
-margin_top = 82.0
-margin_right = 379.0
-margin_bottom = 156.0
+margin_left = 25.2924
+margin_top = 79.4153
+margin_right = 380.292
+margin_bottom = 153.415
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.929688, 0.300628, 0.0544739, 1 )
 custom_colors/font_color_shadow = Color( 0.925781, 0.0916514, 0.0506287, 1 )
 custom_constants/shadow_as_outline = 5
 align = 1
 valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="answer1" type="Button" parent="question_popup"]
 margin_left = 49.3406
@@ -115,7 +141,7 @@ margin_top = 181.362
 margin_right = 246.631
 margin_bottom = 216.362
 grow_horizontal = 0
-custom_styles/focus = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
 flat = true
 
 [node name="ans2_label" type="Label" parent="question_popup/answer2"]
@@ -124,7 +150,7 @@ margin_top = -6.0
 margin_right = 81.0
 margin_bottom = 39.0
 size_flags_horizontal = 5
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 text = "13"
 align = 1
 
@@ -134,7 +160,7 @@ margin_top = 181.384
 margin_right = 361.015
 margin_bottom = 216.384
 grow_horizontal = 0
-custom_styles/focus = SubResource( 10 )
+custom_styles/focus = SubResource( 11 )
 flat = true
 
 [node name="ans3_label" type="Label" parent="question_popup/answer3"]
@@ -142,7 +168,7 @@ margin_left = -1.0
 margin_top = -6.0
 margin_right = 80.0
 margin_bottom = 39.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
 text = "11"
 align = 1
 valign = 1

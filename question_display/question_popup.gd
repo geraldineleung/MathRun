@@ -114,11 +114,15 @@ func _process(delta):
 func _on_answer1_pressed():
 	if $question_popup/answer1/ans1_label.text == str(right_ans):
 		info.score_current+=20
+		$feedback_popup/feedback_popup_label.text = "Great!"
+		$feedback_popup.popup()
 		print("good")
 	else:
 		info.score_current-=10
 		if info.score_current < 0:
 			info.score_current = 0
+		$feedback_popup/feedback_popup_label.text = "Wrong!"
+		$feedback_popup.popup()
 		print("wrong")
 	get_tree().paused = false
 
@@ -126,11 +130,15 @@ func _on_answer1_pressed():
 func _on_answer2_pressed():
 	if $question_popup/answer2/ans2_label.text == str(right_ans):
 		info.score_current+=20
+		$feedback_popup/feedback_popup_label.text = "Great!"
+		$feedback_popup.popup()
 		print("good")
 	else:
 		info.score_current-=10
 		if info.score_current < 0:
 			info.score_current = 0
+		$feedback_popup/feedback_popup_label.text = "Wrong!"
+		$feedback_popup.popup()
 		print("wrong")
 	get_tree().paused = false
 
@@ -138,10 +146,14 @@ func _on_answer2_pressed():
 func _on_answer3_pressed():
 	if $question_popup/answer3/ans3_label.text == str(right_ans):
 		info.score_current+=20
+		$feedback_popup/feedback_popup_label.text = "Great!"
+		$feedback_popup.popup()
 		print("good")
 	else:
 		info.score_current-=10
 		if info.score_current < 0:
 			info.score_current = 0
+		$feedback_popup/feedback_popup_label.text = "Wrong!"
+		$feedback_popup.popup()
 		print("wrong")
 	get_tree().paused = false
