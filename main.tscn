@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://background/background.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Pause.gd" type="Script" id=5]
 [ext_resource path="res://font_score.TTF" type="DynamicFontData" id=6]
 [ext_resource path="res://lbl_score.gd" type="Script" id=7]
+[ext_resource path="res://music/lozmusic.ogg" type="AudioStream" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 18.1027 )
@@ -112,4 +113,8 @@ custom_constants/shadow_offset_y = 1
 text = "SCORE:"
 align = 1
 valign = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
 
