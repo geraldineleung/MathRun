@@ -33,7 +33,7 @@ func _ready():
 	var count = 0
 	for i in range(index):
 		if count < 5:
-			scoreline += "Player -----" + str(score[i]) + "\n"
+			scoreline += str(names[i]) + " -----" + str(score[i]) + "\n"
 		count += 1
 	
 	text = scoreline

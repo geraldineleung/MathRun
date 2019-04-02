@@ -7,13 +7,13 @@ func _ready():
 	game_settings.current_scene = "GameOver"
 	
 	var lab = get_node("Score")
-	lab.set_text("Score: " + str(info.score_current))
+	lab.set_text(str(game_settings.username) + " Score: " + str(info.score_current))
 	
 	
 	var file = File.new()
 	file.open("res://game/Highscores.txt", file.READ_WRITE)
 	file.seek_end()
-	file.store_string("\nPlayer\n"+ str(info.score_current))
+	file.store_string("\n" + str(game_settings.username) + "\n"+ str(info.score_current))
 	file.close()
 	
   
