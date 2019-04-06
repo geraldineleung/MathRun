@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/lozmusic.wav-f06a53dd808180bfcf00e3cee8e03f6d.sample"
+
+[deps]
+
+source_file="res://music/lozmusic.wav"
+dest_files=[ "res://.import/lozmusic.wav-f06a53dd808180bfcf00e3cee8e03f6d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
