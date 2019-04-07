@@ -4,7 +4,7 @@
 [ext_resource path="res://game/difficulty_option.gd" type="Script" id=2]
 [ext_resource path="res://game/operation_option.gd" type="Script" id=3]
 
-[node name="TemplatePage" index="0" instance=ExtResource( 1 )]
+[node name="TemplatePage" instance=ExtResource( 1 )]
 
 [node name="CenterContainer" parent="." index="0"]
 margin_left = -0.430603
@@ -13,14 +13,8 @@ margin_right = -0.430603
 margin_bottom = -0.666626
 
 [node name="VBoxContainer" parent="CenterContainer" index="0"]
-margin_left = 317.0
 margin_top = 163.0
-margin_right = 482.0
 margin_bottom = 437.0
-
-[node name="Label" parent="CenterContainer/VBoxContainer" index="0"]
-margin_right = 165.0
-margin_bottom = 45.0
 
 [node name="Difficulty" type="Label" parent="CenterContainer/VBoxContainer" index="1"]
 margin_top = 49.0
@@ -76,6 +70,5 @@ margin_bottom = 241.0
 
 [node name="Button" parent="CenterContainer/VBoxContainer" index="6"]
 margin_top = 245.0
-margin_right = 165.0
 margin_bottom = 274.0
 

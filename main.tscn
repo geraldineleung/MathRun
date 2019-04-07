@@ -3,11 +3,11 @@
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://background/background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://question_display/question_popup.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Pause.gd" type="Script" id=5]
-[ext_resource path="res://font_score.TTF" type="DynamicFontData" id=6]
-[ext_resource path="res://lbl_score.gd" type="Script" id=7]
-[ext_resource path="res://music/lozmusic.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Pause.gd" type="Script" id=4]
+[ext_resource path="res://font_score.TTF" type="DynamicFontData" id=5]
+[ext_resource path="res://lbl_score.gd" type="Script" id=6]
+[ext_resource path="res://music/lozmusic.ogg" type="AudioStream" id=7]
+[ext_resource path="res://question_display/question_popup.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 18.1027 )
@@ -19,10 +19,10 @@ extents = Vector2( 10, 18.6112 )
 extents = Vector2( 292.258, 23.4015 )
 
 [sub_resource type="DynamicFont" id=4]
-font_data = ExtResource( 6 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=5]
-font_data = ExtResource( 6 )
+font_data = ExtResource( 5 )
 
 [node name="Game" type="Node"]
 pause_mode = 1
@@ -40,11 +40,8 @@ pause_mode = 2
 [node name="player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 2035.33, 1073.95 )
 
-[node name="question_popup_container" parent="." instance=ExtResource( 4 )]
-
-[node name="question_popup_container" parent="." instance=ExtResource( 4 )]
-
 [node name="wall" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 149.545, 299.76 )
 scale = Vector2( 0.908688, 9.3292 )
 
@@ -54,6 +51,7 @@ scale = Vector2( 2.48889, 3.26234 )
 shape = SubResource( 1 )
 
 [node name="wall2" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 660.025, 301.052 )
 scale = Vector2( 0.908688, 9.3292 )
 
@@ -74,7 +72,7 @@ shape = SubResource( 3 )
 pause_mode = 2
 margin_right = 40.0
 margin_bottom = 40.0
-script = ExtResource( 5 )
+script = ExtResource( 4 )
 
 [node name="ColorRect" type="ColorRect" parent="Pause"]
 visible = false
@@ -98,7 +96,7 @@ text = "0"
 align = 1
 valign = 1
 max_lines_visible = 10
-script = ExtResource( 7 )
+script = ExtResource( 6 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 322.0
@@ -115,6 +113,10 @@ align = 1
 valign = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
+stream = ExtResource( 7 )
 autoplay = true
+
+[node name="question_popup_container" parent="." instance=ExtResource( 8 )]
+
+[node name="question_popup_container2" parent="." instance=ExtResource( 8 )]
 
