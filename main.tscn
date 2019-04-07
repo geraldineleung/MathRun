@@ -6,7 +6,7 @@
 [ext_resource path="res://Pause.gd" type="Script" id=4]
 [ext_resource path="res://font_score.TTF" type="DynamicFontData" id=5]
 [ext_resource path="res://lbl_score.gd" type="Script" id=6]
-[ext_resource path="res://music/lozmusic.ogg" type="AudioStream" id=7]
+[ext_resource path="res://music/melodyloops-preview-creative-morning.wav" type="AudioStream" id=7]
 [ext_resource path="res://question_display/question_popup.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]

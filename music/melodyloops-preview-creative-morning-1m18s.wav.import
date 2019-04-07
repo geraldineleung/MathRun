@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/melodyloops-preview-creative-morning-1m18s.wav-c2eac6af826e467340fb96fae68c2dce.sample"
+
+[deps]
+
+source_file="res://music/melodyloops-preview-creative-morning-1m18s.wav"
+dest_files=[ "res://.import/melodyloops-preview-creative-morning-1m18s.wav-c2eac6af826e467340fb96fae68c2dce.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
