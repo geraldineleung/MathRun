@@ -2,6 +2,8 @@ extends Button
 onready var info = get_node("/root/new_script")
 
 func _on_quit_button_pressed():
+	if get_tree().paused:
+		get_tree().paused = false
 	var game_settings = get_node("/root/game_settings")
 	game_settings.current_scene = "Title"
 	
